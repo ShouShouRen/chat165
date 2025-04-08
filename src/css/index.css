@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+* {
+  @apply m-0 p-0 box-border font-sans;
+}
+
+.navbar {
+  @apply flex justify-between items-center px-10 py-5 bg-neutral-900 text-white relative;
+}
+
+.logo img {
+  @apply h-[50px];
+}
+
+.nav-links {
+  @apply hidden list-none gap-8 items-center;
+}
+
+.nav-links li a {
+  @apply text-white no-underline text-lg relative transition-colors duration-300;
+}
+
+.nav-links li a:hover {
+  @apply text-[#ff6347];
+}
+
+.nav-links li a::after {
+  content: "";
+  @apply absolute w-0 h-[2px] bg-[#ff6347] bottom-[-5px] left-0 transition-all duration-300;
+}
+
+.nav-links li a:hover::after {
+  @apply w-full;
+}
+
+.hamburger {
+  @apply flex flex-col cursor-pointer;
+}
+
+.hamburger span {
+  @apply w-[25px] h-[3px] bg-white my-[2px] transition-all duration-300;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav-buttons {
+  @apply hidden items-center;
+}
+
+.linebot-btn {
+  @apply ml-4 px-5 py-2 border-2 border-[#ff6347] text-[#ff6347] rounded-full text-base transition-transform duration-300 hover:scale-110 text-nowrap;
+}
+
+.nav-links {
+  @apply hidden flex-col w-full absolute top-full left-0 bg-neutral-900 p-5;
+}
+.nav-links.active {
+  @apply flex;
+}
+.nav-links li {
+  @apply my-2;
+}
+
+.intro-section {
+  @apply px-5 py-[70px];
+}
+
+.intro-card {
+  @apply max-w-[1200px] mx-auto bg-neutral-900 text-white p-10 rounded-2xl text-center shadow-lg;
+}
+
+.intro-title {
+  @apply text-[3.5rem] mb-6 text-white font-bold;
+}
+
+.intro-desc {
+  @apply text-2xl text-gray-300 mb-10;
+}
+
+.intro-buttons {
+  @apply flex justify-center gap-6;
+}
+
+.chat-now-btn {
+  @apply bg-[#ff6347] text-white px-10 py-3 rounded-full text-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+}
+
+@media (min-width: 768px) {
+  .nav-links {
+    @apply flex static flex-row p-0 bg-transparent;
+  }
+
+  .hamburger {
+    @apply hidden;
+  }
+
+  .nav-buttons {
+    @apply flex;
+  }
+
+  .nav-links li {
+    @apply my-0;
+  }
+
+  .nav-links li a::after {
+    bottom: -4px;
+  }
+}
