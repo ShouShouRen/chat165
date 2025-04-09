@@ -1,8 +1,15 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <nav className="navbar">
@@ -23,13 +30,31 @@ export default function Navbar() {
 
       <ul className={`nav-links ${isOpen ? "active" : ""}`}>
         <li>
-          <Link to="/">首頁</Link>
+          <Link
+            to="/"
+            onClick={handleLinkClick}
+            className={isActive("/") ? "active" : ""}
+          >
+            首頁
+          </Link>
         </li>
         <li>
-          <Link to="/chat">Chat165 機器人</Link>
+          <Link
+            to="/chat"
+            onClick={handleLinkClick}
+            className={isActive("/chat") ? "active" : ""}
+          >
+            Chat165 機器人
+          </Link>
         </li>
         <li>
-          <Link to="/dashboard">防詐儀表板</Link>
+          <Link
+            to="/dashboard"
+            onClick={handleLinkClick}
+            className={isActive("/dashboard") ? "active" : ""}
+          >
+            防詐儀表板
+          </Link>
         </li>
         <li className="md:hidden">
           <a
@@ -37,8 +62,9 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             className="linebot-btn"
+            onClick={handleLinkClick}
           >
-            Linebot連結
+            LineBot連結
           </a>
         </li>
       </ul>
@@ -50,7 +76,7 @@ export default function Navbar() {
           rel="noopener noreferrer"
           className="linebot-btn"
         >
-          Linebot連結
+          LineBot連結
         </a>
       </div>
     </nav>
