@@ -30,10 +30,6 @@
   @apply absolute w-0 h-[2px] bg-[#ff6347] bottom-[-5px] left-0 transition-all duration-300;
 }
 
-.nav-links li a:hover::after {
-  @apply w-full;
-}
-
 .hamburger {
   @apply flex flex-col cursor-pointer;
 }
@@ -115,5 +111,8 @@
 
   .nav-links li a::after {
     bottom: -4px;
+  }
+  .nav-links li a:hover::after {
+    @apply w-full;
   }
 }

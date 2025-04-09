@@ -13,11 +13,10 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="flex items-center justify-between w-full md:w-auto">
+      <div className="flex items-center justify-between w-full md:hidden">
         <div className="logo">
-          <img src="/static/photos/robot.png" alt="Logo" />
+          <img src="/robot.png" alt="Logo" />
         </div>
-
         <div
           className={`hamburger ${isOpen ? "active" : ""}`}
           onClick={() => setIsOpen(!isOpen)}
@@ -28,7 +27,15 @@ export default function Navbar() {
         </div>
       </div>
 
-      <ul className={`nav-links ${isOpen ? "active" : ""}`}>
+      <ul
+        className={`nav-links ${isOpen ? "active" : ""} ${
+          isOpen ? "" : "md:flex"
+        }`}
+      >
+        <div className="logo hidden md:block">
+          <img src="/robot.png" alt="Logo" />
+        </div>
+
         <li>
           <Link
             to="/"
@@ -69,7 +76,7 @@ export default function Navbar() {
         </li>
       </ul>
 
-      <div className="nav-buttons">
+      <div className="nav-buttons md:flex hidden">
         <a
           href="https://line.me/R/ti/p/@950pwvlr"
           target="_blank"

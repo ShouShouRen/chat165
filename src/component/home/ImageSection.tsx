@@ -13,12 +13,12 @@ const images = [
 const ImageCarousel = () => {
   return (
     <section className="pb-5 mb-8 h-96 flex items-center justify-center">
-      <Marquee pauseOnHover gradient={false} speed={50}>
-        <div className="flex gap-8">
+      <Marquee pauseOnHover gradient={false} speed={150}>
+        <div className="flex">
           {images.map((img, index) => (
             <div
               key={index}
-              className="min-w-[200px] h-[240px] overflow-y-hidden rounded-lg shadow-md"
+              className="min-w-[200px] h-[240px] overflow-y-hidden rounded-lg shadow-md mx-8"
             >
               <img
                 src={img.src}
