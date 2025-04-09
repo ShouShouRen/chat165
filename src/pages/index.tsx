@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Navbar from "../component/navbar";
 import { AnimatePresence } from "framer-motion";
+import Navbar from "../components/navbar";
 
 const IndexPage = () => {
   const location = useLocation();

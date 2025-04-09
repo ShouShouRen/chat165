@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
-import AnimatedPage from "../component/utils/AnimatedPage";
 import { sendChatMessage } from "../api/chat";
+import AnimatedPage from "../components/utils/AnimatedPage";
 interface Message {
   from: "user" | "bot";
   text: string;

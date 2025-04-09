@@ -1,7 +1,7 @@
-import ImageCarousel from "../component/home/ImageSection";
-import InteractionSection from "../component/home/InteractionSection";
-import IntroSection from "../component/home/IntroSection";
-import AnimatedPage from "../component/utils/AnimatedPage";
+import ImageCarousel from "../components/home/ImageSection";
+import InteractionSection from "../components/home/InteractionSection";
+import IntroSection from "../components/home/IntroSection";
+import AnimatedPage from "../components/utils/AnimatedPage";
 
 const HomePage = () => {
   return (
